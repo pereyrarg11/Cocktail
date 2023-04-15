@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.pereyrarg11.cocktail.categories.alcoholic.ui.AlcoholicScreen
+import com.pereyrarg11.cocktail.categories.ui.alcoholic.AlcoholicScreen
 import com.pereyrarg11.cocktail.ui.theme.CocktailTheme
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,8 +1,8 @@
-package com.pereyrarg11.cocktail.categories.alcoholic.ui
+package com.pereyrarg11.cocktail.categories.ui.alcoholic
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.pereyrarg11.cocktail.categories.alcoholic.domain.GetAlcoholicCocktailListUseCase
+import com.pereyrarg11.cocktail.categories.domain.GetAlcoholicCocktailListUseCase
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState.*
 import dagger.hilt.android.lifecycle.HiltViewModel

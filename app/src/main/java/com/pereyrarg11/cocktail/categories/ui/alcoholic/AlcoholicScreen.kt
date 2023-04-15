@@ -1,4 +1,4 @@
-package com.pereyrarg11.cocktail.categories.alcoholic.ui
+package com.pereyrarg11.cocktail.categories.ui.alcoholic
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column
