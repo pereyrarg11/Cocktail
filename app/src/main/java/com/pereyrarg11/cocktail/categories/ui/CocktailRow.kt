@@ -28,7 +28,6 @@ fun CocktailRow(
             .fillMaxWidth()
             .padding(
                 horizontal = dimensionResource(id = R.dimen.margin_md),
-                vertical = dimensionResource(id = R.dimen.margin_sm)
             )
             .clickable { onClick() },
     ) {
