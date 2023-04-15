@@ -13,6 +13,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState.*
 import com.pereyrarg11.cocktail.categories.ui.CocktailColumn
+import com.pereyrarg11.cocktail.common.ui.ErrorScreen
 import com.pereyrarg11.cocktail.common.ui.LoadingScreen
 
 @Composable
@@ -33,7 +34,7 @@ fun AlcoholicScreen(
 
     when (uiState) {
         is Error -> {
-            // TODO: define a composable for this case
+            ErrorScreen()
         }
         Loading -> {
             LoadingScreen()

@@ -75,4 +75,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
     // Glide
     implementation 'com.github.bumptech.glide:compose:1.0.0-alpha.1'
+    // Icons
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
 }

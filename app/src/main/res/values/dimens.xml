@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- todo: rename margin to size -->
     <dimen name="margin_lg">24dp</dimen>
     <dimen name="margin_md">16dp</dimen>
     <dimen name="margin_sm">8dp</dimen>
     <dimen name="margin_xs">4dp</dimen>
+    <dimen name="size_xlg">32dp</dimen>
+    <dimen name="size_xxlg">48dp</dimen>
 </resources>

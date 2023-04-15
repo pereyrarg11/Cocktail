@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Cocktail</string>
+    <string name="error_try_later">Ocurrió un error.\nIntenta más tarde</string>
     <string name="message_loading">Cargando</string>
 </resources>
