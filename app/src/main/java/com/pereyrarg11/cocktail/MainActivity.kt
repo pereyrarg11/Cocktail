@@ -8,7 +8,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.pereyrarg11.cocktail.categories.ui.alcoholic.AlcoholicScreen
+import com.pereyrarg11.cocktail.common.ui.navigation.Arguments
+import com.pereyrarg11.cocktail.common.ui.navigation.Routes
+import com.pereyrarg11.cocktail.detail.ui.CocktailDetailScreen
 import com.pereyrarg11.cocktail.ui.theme.CocktailTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,6 +40,29 @@ fun CocktailAppContent(
         modifier = modifier,
         color = MaterialTheme.colorScheme.background
     ) {
-        AlcoholicScreen()
+        /*
+        * more details about navigation
+        * https://developer.android.com/jetpack/compose/navigation
+        * https://developer.android.com/jetpack/compose/libraries#hilt-navigation
+        * */
+        val navController = rememberNavController()
+        NavHost(
+            navController = navController,
+            startDestination = Routes.CocktailsScreen.route,
+        ) {
+            composable(Routes.CocktailsScreen.route) { AlcoholicScreen(navController) }
+
+            composable(
+                route = Routes.CocktailDetailScreen.route,
+                arguments = listOf(
+                    navArgument(Arguments.ID.label) { type = NavType.StringType }
+                )
+            ) { navBackStackEntry ->
+                CocktailDetailScreen(
+                    cocktailId = navBackStackEntry.arguments?.getString(Arguments.ID.label) ?: "",
+                    navController = navController,
+                )
+            }
+        }
     }
 }
