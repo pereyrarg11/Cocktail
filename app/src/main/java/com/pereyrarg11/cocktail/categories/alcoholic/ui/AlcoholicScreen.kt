@@ -13,6 +13,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState.*
 import com.pereyrarg11.cocktail.categories.ui.CocktailColumn
+import com.pereyrarg11.cocktail.common.ui.LoadingScreen
 
 @Composable
 fun AlcoholicScreen(
@@ -35,7 +36,7 @@ fun AlcoholicScreen(
             // TODO: define a composable for this case
         }
         Loading -> {
-            // TODO: define a composable for this case
+            LoadingScreen()
         }
         is Success -> {
             Column(modifier = modifier) {

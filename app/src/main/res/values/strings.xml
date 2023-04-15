@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cocktail</string>
+    <string name="message_loading">Cargando</string>
 </resources>
