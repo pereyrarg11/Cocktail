@@ -5,7 +5,7 @@ import com.pereyrarg11.cocktail.categories.data.network.model.converter.Cocktail
 import com.pereyrarg11.cocktail.categories.data.network.model.schema.CocktailListSchema
 import com.pereyrarg11.cocktail.categories.data.network.model.schema.CocktailSchema
 import com.pereyrarg11.cocktail.categories.ui.model.CocktailModel
-import com.pereyrarg11.cocktail.data.Converter
+import com.pereyrarg11.cocktail.common.data.Converter
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.pereyrarg11.cocktail.data
+package com.pereyrarg11.cocktail.common.data
 
 interface Converter<Input, Output> {
 

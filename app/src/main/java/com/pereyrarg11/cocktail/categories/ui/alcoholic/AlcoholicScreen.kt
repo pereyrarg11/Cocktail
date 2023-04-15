@@ -1,4 +1,4 @@
-package com.pereyrarg11.cocktail.categories.alcoholic.ui
+package com.pereyrarg11.cocktail.categories.ui.alcoholic
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column
@@ -13,6 +13,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState.*
 import com.pereyrarg11.cocktail.categories.ui.CocktailColumn
+import com.pereyrarg11.cocktail.common.ui.ErrorScreen
+import com.pereyrarg11.cocktail.common.ui.LoadingScreen
 
 @Composable
 fun AlcoholicScreen(
@@ -32,10 +34,10 @@ fun AlcoholicScreen(
 
     when (uiState) {
         is Error -> {
-            // TODO: define a composable for this case
+            ErrorScreen()
         }
         Loading -> {
-            // TODO: define a composable for this case
+            LoadingScreen()
         }
         is Success -> {
             Column(modifier = modifier) {

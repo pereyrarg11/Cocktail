@@ -1,4 +1,4 @@
-package com.pereyrarg11.cocktail.categories.alcoholic.domain
+package com.pereyrarg11.cocktail.categories.domain
 
 import com.pereyrarg11.cocktail.categories.data.repository.AlcoholCategoryRepository
 import com.pereyrarg11.cocktail.categories.ui.model.CocktailModel
