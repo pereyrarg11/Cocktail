@@ -31,7 +31,7 @@ fun ErrorScreen(
                 contentDescription = null,
                 modifier = Modifier.size(dimensionResource(id = R.dimen.size_xxlg)),
             )
-            Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.margin_lg)))
+            Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.size_lg)))
             Text(text = message, textAlign = TextAlign.Center)
         }
     }

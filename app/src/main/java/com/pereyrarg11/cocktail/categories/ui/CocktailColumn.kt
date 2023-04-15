@@ -25,9 +25,9 @@ fun CocktailColumn(
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(
-            bottom = dimensionResource(id = R.dimen.margin_md)
+            bottom = dimensionResource(id = R.dimen.size_md)
         ),
-        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.margin_md))
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.size_md))
     ) {
         grouped.forEach { (initial, itemsForInitial) ->
             stickyHeader {

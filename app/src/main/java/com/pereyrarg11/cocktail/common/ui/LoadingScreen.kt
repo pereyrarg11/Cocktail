@@ -24,7 +24,7 @@ fun LoadingScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             CircularProgressIndicator()
-            Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.margin_lg)))
+            Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.size_lg)))
             Text(text = message)
         }
     }

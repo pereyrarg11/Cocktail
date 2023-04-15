@@ -21,8 +21,8 @@ fun CocktailHeader(label: String) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    horizontal = dimensionResource(id = R.dimen.margin_md),
-                    vertical = dimensionResource(id = R.dimen.margin_xs)
+                    horizontal = dimensionResource(id = R.dimen.size_md),
+                    vertical = dimensionResource(id = R.dimen.size_xs)
                 )
         )
     }

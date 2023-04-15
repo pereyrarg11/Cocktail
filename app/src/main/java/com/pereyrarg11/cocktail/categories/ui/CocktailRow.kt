@@ -27,7 +27,7 @@ fun CocktailRow(
         modifier = modifier
             .fillMaxWidth()
             .padding(
-                horizontal = dimensionResource(id = R.dimen.margin_md),
+                horizontal = dimensionResource(id = R.dimen.size_md),
             )
             .clickable { onClick() },
     ) {
@@ -41,7 +41,7 @@ fun CocktailRow(
                 contentDescription = null,
                 modifier = Modifier.size(100.dp),
             )
-            Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.margin_md)))
+            Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.size_md)))
             Text(text = model.name)
         }
     }
