@@ -1,5 +1,10 @@
 <resources>
+    <!-- Common -->
     <string name="app_name">Cocktail</string>
     <string name="error_try_later">Ocurrió un error.\nIntenta más tarde</string>
     <string name="message_loading">Cargando</string>
+    <string name="action_back">Volver</string>
+
+    <!-- Drink detail -->
+    <string name="title_drink">Bebida</string>
 </resources>

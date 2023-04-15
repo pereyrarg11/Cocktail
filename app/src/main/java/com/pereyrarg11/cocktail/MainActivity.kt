@@ -16,7 +16,7 @@ import androidx.navigation.navArgument
 import com.pereyrarg11.cocktail.categories.ui.alcoholic.AlcoholicScreen
 import com.pereyrarg11.cocktail.common.ui.navigation.Arguments
 import com.pereyrarg11.cocktail.common.ui.navigation.Routes
-import com.pereyrarg11.cocktail.detail.ui.CocktailDetailScreen
+import com.pereyrarg11.cocktail.detail.ui.DrinkDetailScreen
 import com.pereyrarg11.cocktail.ui.theme.CocktailTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -58,7 +58,7 @@ fun CocktailAppContent(
                     navArgument(Arguments.ID.label) { type = NavType.StringType }
                 )
             ) { navBackStackEntry ->
-                CocktailDetailScreen(
+                DrinkDetailScreen(
                     cocktailId = navBackStackEntry.arguments?.getString(Arguments.ID.label) ?: "",
                     navController = navController,
                 )
