@@ -1,4 +1,4 @@
-package com.pereyrarg11.cocktail.data.network.di
+package com.pereyrarg11.cocktail.common.data.di
 
 import dagger.Module
 import dagger.Provides

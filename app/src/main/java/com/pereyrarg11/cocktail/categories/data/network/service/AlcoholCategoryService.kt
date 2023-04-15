@@ -3,7 +3,7 @@ package com.pereyrarg11.cocktail.categories.data.network.service
 import com.pereyrarg11.cocktail.categories.data.network.client.AlcoholCategoryClient
 import com.pereyrarg11.cocktail.categories.data.network.model.schema.CocktailListSchema
 import com.pereyrarg11.cocktail.categories.ui.model.CocktailModel
-import com.pereyrarg11.cocktail.data.Converter
+import com.pereyrarg11.cocktail.common.data.Converter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
