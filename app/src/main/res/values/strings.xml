@@ -7,4 +7,7 @@
 
     <!-- Drink detail -->
     <string name="title_drink">Bebida</string>
+    <string name="title_glass_type">Tipo de Vaso</string>
+    <string name="title_ingredients">Ingredientes</string>
+    <string name="title_preparation">Preparación</string>
 </resources>
