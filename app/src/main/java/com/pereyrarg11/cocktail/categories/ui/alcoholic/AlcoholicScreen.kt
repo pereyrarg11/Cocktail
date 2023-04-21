@@ -1,25 +1,27 @@
 package com.pereyrarg11.cocktail.categories.ui.alcoholic
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState
 import com.pereyrarg11.cocktail.categories.ui.CategoriesUiState.*
 import com.pereyrarg11.cocktail.categories.ui.CocktailColumn
 import com.pereyrarg11.cocktail.common.ui.ErrorScreen
 import com.pereyrarg11.cocktail.common.ui.LoadingScreen
+import com.pereyrarg11.cocktail.common.ui.navigation.Routes
 
 @Composable
 fun AlcoholicScreen(
+    navHostController: NavHostController,
     modifier: Modifier = Modifier,
-    viewModel: AlcoholicViewModel = viewModel(),
+    viewModel: AlcoholicViewModel = hiltViewModel()
 ) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     val uiState by produceState<CategoriesUiState>(
@@ -44,7 +46,7 @@ fun AlcoholicScreen(
                 CocktailColumn(
                     rowList = (uiState as Success).cocktailList,
                     onClickItem = { model ->
-                        Log.i("AlcoholicScreen", "you have clicked on ${model.name}")
+                        navHostController.navigate(Routes.CocktailDetailScreen.createRoute(model.id))
                     }
                 )
             }
