@@ -1,5 +1,6 @@
 package com.pereyrarg11.cocktail.detail.ui
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
@@ -39,17 +40,20 @@ fun DrinkDetailScreen(
     Scaffold(
         topBar = { DrinkDetailAppBar(navController) },
         modifier = modifier,
-    ) {
+    ) { innerPadding ->
         when (uiState) {
             is Error -> {
-                ErrorScreen()
+                ErrorScreen(modifier = Modifier.padding(innerPadding))
             }
             Loading -> {
-                LoadingScreen()
+                LoadingScreen(modifier = Modifier.padding(innerPadding))
             }
             is Success -> {
                 val drinkDetail = (uiState as Success).drink
-                DrinkDetailScreenContent(drinkDetail = drinkDetail)
+                DrinkDetailScreenContent(
+                    drinkDetail = drinkDetail,
+                    modifier = Modifier.padding(innerPadding)
+                )
             }
         }
     }

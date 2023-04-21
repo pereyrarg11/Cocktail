@@ -22,7 +22,7 @@ fun DrinkDetailScreenContent(
 ) {
     Column(
         modifier = modifier
-            .padding(bottom = dimensionResource(id = R.dimen.size_md))
+            .fillMaxWidth()
             .verticalScroll(rememberScrollState())
     ) {
         DrinkDetailImage(
@@ -36,11 +36,10 @@ fun DrinkDetailScreenContent(
         DrinkDetailContent(label = drinkDetail.ingredients.joinToString(separator = "\n"))
         DrinkDetailSubtitle(label = stringResource(R.string.title_preparation))
         DrinkDetailContent(label = drinkDetail.instructions)
+        Spacer(modifier = Modifier.size(dimensionResource(id = R.dimen.size_md)))
     }
 }
 
-// TODO: center the image, some times is cut-off
-// TODO: add a placeholder in order to avoid the re-sizing of screen
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun DrinkDetailImage(
@@ -51,12 +50,13 @@ fun DrinkDetailImage(
     ConstraintLayout(modifier = modifier.fillMaxWidth()) {
         val (image, copyright) = createRefs()
 
+        // TODO: add a placeholder and error drawables using https://github.com/skydoves/landscapist
         GlideImage(
             model = imageUrl,
             contentDescription = null,
-            contentScale = ContentScale.FillWidth,
+            contentScale = ContentScale.Crop,
             modifier = Modifier
-                .fillMaxWidth()
+                .aspectRatio(1f)
                 .constrainAs(image) {
                     start.linkTo(parent.start)
                     top.linkTo(parent.top)
