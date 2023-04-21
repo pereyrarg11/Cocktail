@@ -10,4 +10,10 @@
     <string name="title_glass_type">Tipo de Vaso</string>
     <string name="title_ingredients">Ingredientes</string>
     <string name="title_preparation">Preparación</string>
+
+    <!-- Categories -->
+    <string name="title_category_alcoholic">Alcoholic</string>
+    <string name="title_category_non_alcoholic">Non Alcoholic</string>
+    <string name="title_category_alcohol_optional">Optional</string>
+    <string name="title_category_wrapper_alcohol">Responsible consumption</string>
 </resources>
