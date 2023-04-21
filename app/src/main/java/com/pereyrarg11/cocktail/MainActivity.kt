@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.pereyrarg11.cocktail.categories.ui.CategoriesScreen
 import com.pereyrarg11.cocktail.categories.ui.alcoholic.AlcoholicScreen
 import com.pereyrarg11.cocktail.common.ui.navigation.Arguments
 import com.pereyrarg11.cocktail.common.ui.navigation.Routes
@@ -48,8 +49,10 @@ fun CocktailAppContent(
         val navController = rememberNavController()
         NavHost(
             navController = navController,
-            startDestination = Routes.CocktailsScreen.route,
+            startDestination = Routes.CategoriesScreen.route,
         ) {
+            composable(Routes.CategoriesScreen.route) { CategoriesScreen() }
+
             composable(Routes.CocktailsScreen.route) { AlcoholicScreen(navController) }
 
             composable(
