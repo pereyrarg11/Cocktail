@@ -46,6 +46,12 @@ class DrinkDetailSchemaConverter @Inject constructor() :
 
         return ingredients
             .filter { it.second.isNotEmpty() }
-            .map { "${it.second} ${it.first}" }
+            .map {
+                if (it.first.isNullOrEmpty().not()) {
+                    "${it.first} ${it.second}"
+                } else {
+                    it.second
+                }
+            }
     }
 }
