@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryWrapperDisplayable
@@ -23,15 +22,15 @@ fun CategoriesScreen(
                     type = CategoryWrapperType.ALCOHOL,
                     items = listOf(
                         CategoryItemDisplayable(
-                            label = stringResource(R.string.title_category_alcoholic),
+                            labelResource = R.string.title_category_alcoholic,
                             imageUrl = "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
                         ),
                         CategoryItemDisplayable(
-                            label = stringResource(R.string.title_category_non_alcoholic),
+                            labelResource = R.string.title_category_non_alcoholic,
                             imageUrl = "https://www.thecocktaildb.com/images/media/drink/xwqvur1468876473.jpg",
                         ),
                         CategoryItemDisplayable(
-                            label = stringResource(R.string.title_category_alcohol_optional),
+                            labelResource = R.string.title_category_alcohol_optional,
                             imageUrl = "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg",
                         )
                     )

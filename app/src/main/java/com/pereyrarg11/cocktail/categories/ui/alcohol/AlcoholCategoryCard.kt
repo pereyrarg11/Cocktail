@@ -43,10 +43,12 @@ fun AlcoholCategoryCard(
             }
     ) {
         Box {
+            val label = stringResource(id = category.labelResource)
+
             if (isPreview) {
                 Image(
                     painter = painterResource(id = R.drawable.img_drink_demo),
-                    contentDescription = category.label,
+                    contentDescription = label,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .align(Alignment.Center)
@@ -55,7 +57,7 @@ fun AlcoholCategoryCard(
             } else {
                 GlideImage(
                     model = category.imageUrl,
-                    contentDescription = category.label,
+                    contentDescription = label,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .align(Alignment.Center)
@@ -64,7 +66,7 @@ fun AlcoholCategoryCard(
             }
 
             Text(
-                text = category.label,
+                text = label,
                 color = Color.White,
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
@@ -94,7 +96,7 @@ fun AlcoholCategoryCard(
 fun AlcoholCardPreview() {
     CocktailPreview {
         AlcoholCategoryCard(
-            category = CategoryItemDisplayable(stringResource(id = R.string.title_category_non_alcoholic))
+            category = CategoryItemDisplayable(R.string.title_category_non_alcoholic)
         )
     }
 }
