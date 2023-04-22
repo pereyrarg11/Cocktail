@@ -1,6 +1,5 @@
-package com.pereyrarg11.cocktail.categories.ui
+package com.pereyrarg11.cocktail.categories.data
 
-// TODO: is here the best location for this class?
 /**
  * List of all filters that can be used to list drinks.
  * Alcohol subcategories are flattened in the list.

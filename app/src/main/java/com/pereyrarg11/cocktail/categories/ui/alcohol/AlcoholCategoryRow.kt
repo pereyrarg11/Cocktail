@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
-import com.pereyrarg11.cocktail.categories.ui.CategoryFilter
+import com.pereyrarg11.cocktail.categories.data.CategoryFilter
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
