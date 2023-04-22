@@ -4,6 +4,7 @@
     <string name="error_try_later">Something went wrong.\nTry later</string>
     <string name="message_loading">Loading</string>
     <string name="action_back">Back</string>
+    <string name="action_see_more">See More</string>
 
     <!-- Drink detail -->
     <string name="title_drink">Drink</string>
@@ -15,4 +16,10 @@
     <string name="title_alcohol_filter_alcoholic">Alcoholic</string>
     <string name="title_alcohol_filter_non_alcoholic">Non Alcoholic</string>
     <string name="title_alcohol_filter_alcohol_optional">Optional</string>
+    <!-- Home / Categories -->
+    <string name="title_category_filter_cocktail">Cocktail</string>
+    <string name="title_category_filter_shake">Shake</string>
+    <string name="title_category_filter_shot">Shot</string>
+    <string name="title_category_filter_beer">Beer</string>
+    <string name="title_category_filter_coffee_and_tea">Coffee and Tea</string>
 </resources>
