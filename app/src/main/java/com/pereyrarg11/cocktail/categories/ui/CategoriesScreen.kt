@@ -5,6 +5,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.pereyrarg11.cocktail.R
+import com.pereyrarg11.cocktail.categories.data.CategoryWrapperType
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryWrapperDisplayable
 

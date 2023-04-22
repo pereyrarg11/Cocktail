@@ -10,6 +10,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.categories.data.CategoryFilter
+import com.pereyrarg11.cocktail.categories.data.CategoryWrapperType
 import com.pereyrarg11.cocktail.categories.ui.alcohol.AlcoholCategoryRow
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryWrapperDisplayable
