@@ -4,19 +4,20 @@ import com.pereyrarg11.cocktail.categories.data.repository.model.AlcoholContent
 import com.pereyrarg11.cocktail.categories.data.repository.model.HomeSectionContent
 import com.pereyrarg11.cocktail.categories.ui.model.AlcoholDisplayable
 import com.pereyrarg11.cocktail.categories.ui.model.HomeSectionDisplayable
-import com.pereyrarg11.cocktail.categories.ui.model.converter.*
+import com.pereyrarg11.cocktail.categories.ui.model.converter.AlcoholDisplayableConverter
+import com.pereyrarg11.cocktail.categories.ui.model.converter.AlcoholDisplayableListConverter
+import com.pereyrarg11.cocktail.categories.ui.model.converter.HomeSectionDisplayableConverter
+import com.pereyrarg11.cocktail.categories.ui.model.converter.HomeSectionDisplayableListConverter
 import com.pereyrarg11.cocktail.common.data.Converter
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
-// TODO: rename to HomeUiConverterModule
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class CategoryConverterModule {
+abstract class HomeUiConverterModule {
 
-    /* UI Layer */
     @Binds
     abstract fun bindsAlcoholDisplayableConverter(
         converter: AlcoholDisplayableConverter
