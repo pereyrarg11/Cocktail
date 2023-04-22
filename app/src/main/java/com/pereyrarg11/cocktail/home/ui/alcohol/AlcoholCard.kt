@@ -36,8 +36,8 @@ fun AlcoholCard(
 ) {
     Card(
         modifier = modifier
-            .width(dimensionResource(id = R.dimen.width_alcohol_category))
-            .height(dimensionResource(id = R.dimen.height_alcohol_category))
+            .width(dimensionResource(id = R.dimen.width_alcohol_filter_card))
+            .height(dimensionResource(id = R.dimen.height_alcohol_filter_card))
             .clickable {
                 onClickListener(model.type)
             }
@@ -96,7 +96,7 @@ fun AlcoholCard(
 fun AlcoholCardPreview() {
     CocktailPreview {
         AlcoholCard(
-            model = AlcoholDisplayable(R.string.title_category_non_alcoholic)
+            model = AlcoholDisplayable(R.string.title_alcohol_filter_non_alcoholic)
         )
     }
 }

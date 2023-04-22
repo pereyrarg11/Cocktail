@@ -7,7 +7,7 @@
     <dimen name="size_xlg">32dp</dimen>
     <dimen name="size_xxlg">48dp</dimen>
 
-    <!-- Categories -->
-    <dimen name="height_alcohol_category">270dp</dimen>
-    <dimen name="width_alcohol_category">180dp</dimen>
+    <!-- Home -->
+    <dimen name="height_alcohol_filter_card">270dp</dimen>
+    <dimen name="width_alcohol_filter_card">180dp</dimen>
 </resources>

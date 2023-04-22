@@ -37,15 +37,15 @@ fun AlcoholRowPreview() {
         AlcoholRow(
             alcoholItems = listOf(
                 AlcoholDisplayable(
-                    labelResource = R.string.title_category_alcoholic,
+                    labelResource = R.string.title_alcohol_filter_alcoholic,
                     imageUrl = "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
                 ),
                 AlcoholDisplayable(
-                    labelResource = R.string.title_category_non_alcoholic,
+                    labelResource = R.string.title_alcohol_filter_non_alcoholic,
                     imageUrl = "https://www.thecocktaildb.com/images/media/drink/xwqvur1468876473.jpg",
                 ),
                 AlcoholDisplayable(
-                    labelResource = R.string.title_category_alcohol_optional,
+                    labelResource = R.string.title_alcohol_filter_alcohol_optional,
                     imageUrl = "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg",
                 )
             )

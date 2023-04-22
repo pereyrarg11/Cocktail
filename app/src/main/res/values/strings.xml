@@ -1,21 +1,18 @@
 <resources>
     <!-- Common -->
     <string name="app_name">Cocktail</string>
-    <string name="error_try_later">Ocurrió un error.\nIntenta más tarde</string>
-    <string name="message_loading">Cargando</string>
-    <string name="action_back">Volver</string>
+    <string name="error_try_later">Something went wrong.\nTry later</string>
+    <string name="message_loading">Loading</string>
+    <string name="action_back">Back</string>
 
     <!-- Drink detail -->
-    <string name="title_drink">Bebida</string>
-    <string name="title_glass_type">Tipo de Vaso</string>
-    <string name="title_ingredients">Ingredientes</string>
-    <string name="title_preparation">Preparación</string>
+    <string name="title_drink">Drink</string>
+    <string name="title_glass_type">Glass</string>
+    <string name="title_ingredients">Ingredients</string>
+    <string name="title_preparation">How to prepare?</string>
 
-    <!-- Categories -->
-    <string name="title_category_alcoholic">Alcoholic</string>
-    <string name="title_category_non_alcoholic">Non Alcoholic</string>
-    <string name="title_category_alcohol_optional">Optional</string>
-    <string name="title_category_alcohol_other">Others</string>
-
-    <string name="title_category_wrapper_alcohol">Responsible consumption</string>
+    <!-- Home -->
+    <string name="title_alcohol_filter_alcoholic">Alcoholic</string>
+    <string name="title_alcohol_filter_non_alcoholic">Non Alcoholic</string>
+    <string name="title_alcohol_filter_alcohol_optional">Optional</string>
 </resources>
