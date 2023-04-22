@@ -32,6 +32,7 @@ fun CategoriesScreenContent(
                             onItemClickListener = onItemClickListener,
                         )
                     }
+                    else -> {}
                 }
             }
         }
