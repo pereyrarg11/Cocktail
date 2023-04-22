@@ -22,7 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.pereyrarg11.cocktail.R
-import com.pereyrarg11.cocktail.categories.data.CategoryFilter
+import com.pereyrarg11.cocktail.categories.data.CategoryType
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
@@ -31,7 +31,7 @@ import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 fun AlcoholCategoryCard(
     category: CategoryItemDisplayable,
     modifier: Modifier = Modifier,
-    onClickListener: (CategoryFilter) -> Unit = {},
+    onClickListener: (CategoryType) -> Unit = {},
     isPreview: Boolean = LocalInspectionMode.current
 ) {
     Card(
@@ -39,7 +39,7 @@ fun AlcoholCategoryCard(
             .width(dimensionResource(id = R.dimen.width_alcohol_category))
             .height(dimensionResource(id = R.dimen.height_alcohol_category))
             .clickable {
-                onClickListener(category.categoryFilter)
+                onClickListener(category.categoryType)
             }
     ) {
         Box {

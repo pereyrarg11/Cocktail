@@ -2,7 +2,7 @@ package com.pereyrarg11.cocktail.categories.ui.model.converter
 
 import androidx.annotation.StringRes
 import com.pereyrarg11.cocktail.R
-import com.pereyrarg11.cocktail.categories.data.CategoryFilter
+import com.pereyrarg11.cocktail.categories.data.CategoryType
 import com.pereyrarg11.cocktail.categories.data.repository.model.CategoryContent
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
 import com.pereyrarg11.cocktail.common.data.Converter
@@ -16,27 +16,27 @@ class CategoryDisplayableConverter @Inject constructor() :
             return CategoryItemDisplayable(
                 labelResource = getLabelResourceByCategoryType(type),
                 imageUrl = getImageUrlByCategoryType(type),
-                categoryFilter = type
+                categoryType = type
             )
         }
     }
 
     @StringRes
-    private fun getLabelResourceByCategoryType(categoryType: CategoryFilter): Int {
+    private fun getLabelResourceByCategoryType(categoryType: CategoryType): Int {
         return when (categoryType) {
-            CategoryFilter.ALCOHOLIC -> R.string.title_category_alcoholic
-            CategoryFilter.NON_ALCOHOLIC -> R.string.title_category_non_alcoholic
-            CategoryFilter.ALCOHOL_OPTIONAL -> R.string.title_category_alcohol_optional
-            CategoryFilter.OTHER -> R.string.title_category_alcohol_other
+            CategoryType.ALCOHOLIC -> R.string.title_category_alcoholic
+            CategoryType.NON_ALCOHOLIC -> R.string.title_category_non_alcoholic
+            CategoryType.ALCOHOL_OPTIONAL -> R.string.title_category_alcohol_optional
+            CategoryType.OTHER -> R.string.title_category_alcohol_other
         }
     }
 
-    private fun getImageUrlByCategoryType(categoryType: CategoryFilter): String {
+    private fun getImageUrlByCategoryType(categoryType: CategoryType): String {
         return when (categoryType) {
-            CategoryFilter.ALCOHOLIC -> "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-            CategoryFilter.NON_ALCOHOLIC -> "https://www.thecocktaildb.com/images/media/drink/xwqvur1468876473.jpg"
-            CategoryFilter.ALCOHOL_OPTIONAL -> "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg"
-            CategoryFilter.OTHER -> "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg"
+            CategoryType.ALCOHOLIC -> "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
+            CategoryType.NON_ALCOHOLIC -> "https://www.thecocktaildb.com/images/media/drink/xwqvur1468876473.jpg"
+            CategoryType.ALCOHOL_OPTIONAL -> "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg"
+            CategoryType.OTHER -> "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg"
         }
     }
 }
