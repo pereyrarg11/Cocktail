@@ -22,16 +22,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.pereyrarg11.cocktail.R
-import com.pereyrarg11.cocktail.categories.data.CategoryType
-import com.pereyrarg11.cocktail.categories.ui.model.CategoryDisplayable
+import com.pereyrarg11.cocktail.categories.data.AlcoholFilterType
+import com.pereyrarg11.cocktail.categories.ui.model.AlcoholDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun AlcoholCategoryCard(
-    category: CategoryDisplayable,
+fun AlcoholCard(
+    model: AlcoholDisplayable,
     modifier: Modifier = Modifier,
-    onClickListener: (CategoryType) -> Unit = {},
+    onClickListener: (AlcoholFilterType) -> Unit = {},
     isPreview: Boolean = LocalInspectionMode.current
 ) {
     Card(
@@ -39,11 +39,11 @@ fun AlcoholCategoryCard(
             .width(dimensionResource(id = R.dimen.width_alcohol_category))
             .height(dimensionResource(id = R.dimen.height_alcohol_category))
             .clickable {
-                onClickListener(category.categoryType)
+                onClickListener(model.type)
             }
     ) {
         Box {
-            val label = stringResource(id = category.labelResource)
+            val label = stringResource(id = model.labelResource)
 
             if (isPreview) {
                 Image(
@@ -56,7 +56,7 @@ fun AlcoholCategoryCard(
                 )
             } else {
                 GlideImage(
-                    model = category.imageUrl,
+                    model = model.imageUrl,
                     contentDescription = label,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -95,8 +95,8 @@ fun AlcoholCategoryCard(
 @Composable
 fun AlcoholCardPreview() {
     CocktailPreview {
-        AlcoholCategoryCard(
-            category = CategoryDisplayable(R.string.title_category_non_alcoholic)
+        AlcoholCard(
+            model = AlcoholDisplayable(R.string.title_category_non_alcoholic)
         )
     }
 }

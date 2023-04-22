@@ -37,8 +37,8 @@ fun CategoriesScreen(
             is Error -> ErrorScreen(modifier = Modifier.padding(innerPadding))
             Loading -> LoadingScreen(modifier = Modifier.padding(innerPadding))
             is Success -> {
-                CategoriesScreenContent(
-                    categoryWrapperList = (uiState as Success).wrappers,
+                HomeScreenContent(
+                    sections = emptyList(),
                     modifier = Modifier.padding(innerPadding)
                 )
             }
