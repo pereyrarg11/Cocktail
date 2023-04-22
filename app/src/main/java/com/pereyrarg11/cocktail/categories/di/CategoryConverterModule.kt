@@ -2,7 +2,7 @@ package com.pereyrarg11.cocktail.categories.di
 
 import com.pereyrarg11.cocktail.categories.data.repository.model.CategoryContent
 import com.pereyrarg11.cocktail.categories.data.repository.model.CategoryWrapperContent
-import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
+import com.pereyrarg11.cocktail.categories.ui.model.CategoryDisplayable
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryWrapperDisplayable
 import com.pereyrarg11.cocktail.categories.ui.model.converter.CategoryDisplayableConverter
 import com.pereyrarg11.cocktail.categories.ui.model.converter.CategoryDisplayableListConverter
@@ -22,12 +22,12 @@ abstract class CategoryConverterModule {
     @Binds
     abstract fun bindsCategoryDisplayableConverter(
         converter: CategoryDisplayableConverter
-    ): Converter<CategoryContent, CategoryItemDisplayable>
+    ): Converter<CategoryContent, CategoryDisplayable>
 
     @Binds
     abstract fun bindsCategoryDisplayableListConverter(
         converter: CategoryDisplayableListConverter
-    ): Converter<List<CategoryContent>, List<CategoryItemDisplayable>>
+    ): Converter<List<CategoryContent>, List<CategoryDisplayable>>
 
     @Binds
     abstract fun bindsCategoryWrapperDisplayableConverter(

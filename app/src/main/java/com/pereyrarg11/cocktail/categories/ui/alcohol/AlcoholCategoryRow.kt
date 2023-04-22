@@ -10,12 +10,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.categories.data.CategoryType
-import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
+import com.pereyrarg11.cocktail.categories.ui.model.CategoryDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
 @Composable
 fun AlcoholCategoryRow(
-    categories: List<CategoryItemDisplayable>,
+    categories: List<CategoryDisplayable>,
     modifier: Modifier = Modifier,
     onItemClickListener: (CategoryType) -> Unit = {},
 ) {
@@ -36,15 +36,15 @@ fun AlcoholCategoryRowPreview() {
     CocktailPreview {
         AlcoholCategoryRow(
             categories = listOf(
-                CategoryItemDisplayable(
+                CategoryDisplayable(
                     labelResource = R.string.title_category_alcoholic,
                     imageUrl = "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
                 ),
-                CategoryItemDisplayable(
+                CategoryDisplayable(
                     labelResource = R.string.title_category_non_alcoholic,
                     imageUrl = "https://www.thecocktaildb.com/images/media/drink/xwqvur1468876473.jpg",
                 ),
-                CategoryItemDisplayable(
+                CategoryDisplayable(
                     labelResource = R.string.title_category_alcohol_optional,
                     imageUrl = "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg",
                 )

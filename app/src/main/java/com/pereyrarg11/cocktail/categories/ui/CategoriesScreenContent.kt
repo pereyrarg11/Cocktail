@@ -12,7 +12,7 @@ import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.categories.data.CategoryType
 import com.pereyrarg11.cocktail.categories.data.CategoryWrapperType
 import com.pereyrarg11.cocktail.categories.ui.alcohol.AlcoholCategoryRow
-import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
+import com.pereyrarg11.cocktail.categories.ui.model.CategoryDisplayable
 import com.pereyrarg11.cocktail.categories.ui.model.CategoryWrapperDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
@@ -51,15 +51,15 @@ fun CategoriesScreenContentPreview() {
                     labelResource = R.string.title_category_wrapper_alcohol,
                     type = CategoryWrapperType.ALCOHOL,
                     items = listOf(
-                        CategoryItemDisplayable(
+                        CategoryDisplayable(
                             labelResource = R.string.title_category_alcoholic,
                             imageUrl = "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
                         ),
-                        CategoryItemDisplayable(
+                        CategoryDisplayable(
                             labelResource = R.string.title_category_non_alcoholic,
                             imageUrl = "https://www.thecocktaildb.com/images/media/drink/xwqvur1468876473.jpg",
                         ),
-                        CategoryItemDisplayable(
+                        CategoryDisplayable(
                             labelResource = R.string.title_category_alcohol_optional,
                             imageUrl = "https://www.thecocktaildb.com/images/media/drink/vuxwvt1468875418.jpg",
                         )

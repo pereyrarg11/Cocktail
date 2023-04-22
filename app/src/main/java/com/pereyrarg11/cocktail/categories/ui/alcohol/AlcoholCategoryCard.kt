@@ -23,13 +23,13 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.categories.data.CategoryType
-import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
+import com.pereyrarg11.cocktail.categories.ui.model.CategoryDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun AlcoholCategoryCard(
-    category: CategoryItemDisplayable,
+    category: CategoryDisplayable,
     modifier: Modifier = Modifier,
     onClickListener: (CategoryType) -> Unit = {},
     isPreview: Boolean = LocalInspectionMode.current
@@ -96,7 +96,7 @@ fun AlcoholCategoryCard(
 fun AlcoholCardPreview() {
     CocktailPreview {
         AlcoholCategoryCard(
-            category = CategoryItemDisplayable(R.string.title_category_non_alcoholic)
+            category = CategoryDisplayable(R.string.title_category_non_alcoholic)
         )
     }
 }

@@ -4,16 +4,16 @@ import androidx.annotation.StringRes
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.categories.data.CategoryType
 import com.pereyrarg11.cocktail.categories.data.repository.model.CategoryContent
-import com.pereyrarg11.cocktail.categories.ui.model.CategoryItemDisplayable
+import com.pereyrarg11.cocktail.categories.ui.model.CategoryDisplayable
 import com.pereyrarg11.cocktail.common.data.Converter
 import javax.inject.Inject
 
 class CategoryDisplayableConverter @Inject constructor() :
-    Converter<CategoryContent, CategoryItemDisplayable> {
+    Converter<CategoryContent, CategoryDisplayable> {
 
-    override fun convert(input: CategoryContent): CategoryItemDisplayable {
+    override fun convert(input: CategoryContent): CategoryDisplayable {
         input.run {
-            return CategoryItemDisplayable(
+            return CategoryDisplayable(
                 labelResource = getLabelResourceByCategoryType(type),
                 imageUrl = getImageUrlByCategoryType(type),
                 categoryType = type
