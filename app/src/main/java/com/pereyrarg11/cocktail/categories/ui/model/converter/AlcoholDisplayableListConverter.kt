@@ -12,7 +12,7 @@ class AlcoholDisplayableListConverter @Inject constructor(
 
     override fun convert(input: List<AlcoholContent>): List<AlcoholDisplayable> {
         return input
+            .filter { content -> content.type != AlcoholFilterType.UNKNOWN }
             .map { content -> contentConverter.convert(content) }
-            .filter { displayable -> displayable.type != AlcoholFilterType.UNKNOWN }
     }
 }

@@ -16,6 +16,7 @@ class AlcoholDisplayableConverter @Inject constructor() :
         return AlcoholDisplayable(
             labelResource = getLabelResourceByType(input.type),
             imageUrl = getImageUrlByType(input.type),
+            type = input.type,
         )
     }
 

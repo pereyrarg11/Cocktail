@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
-import com.pereyrarg11.cocktail.categories.ui.CategoriesUiStateV2.*
+import com.pereyrarg11.cocktail.categories.ui.HomeScreenUiState.*
 import com.pereyrarg11.cocktail.common.ui.ErrorScreen
 import com.pereyrarg11.cocktail.common.ui.LoadingScreen
 
@@ -20,7 +20,7 @@ fun CategoriesScreen(
     viewModel: CategoriesViewModel = hiltViewModel(),
 ) {
     val lifecycle = LocalLifecycleOwner.current.lifecycle
-    val uiState by produceState<CategoriesUiStateV2>(
+    val uiState by produceState<HomeScreenUiState>(
         initialValue = Loading,
         key1 = lifecycle,
         key2 = viewModel
@@ -38,7 +38,7 @@ fun CategoriesScreen(
             Loading -> LoadingScreen(modifier = Modifier.padding(innerPadding))
             is Success -> {
                 HomeScreenContent(
-                    sections = emptyList(),
+                    sections = (uiState as Success).sections,
                     modifier = Modifier.padding(innerPadding)
                 )
             }
