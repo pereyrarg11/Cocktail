@@ -22,24 +22,23 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.pereyrarg11.cocktail.R
-import com.pereyrarg11.cocktail.home.data.AlcoholFilterType
-import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
+import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun AlcoholCard(
     model: AlcoholDisplayable,
     modifier: Modifier = Modifier,
-    onClickListener: (AlcoholFilterType) -> Unit = {},
-    isPreview: Boolean = LocalInspectionMode.current
+    isPreview: Boolean = LocalInspectionMode.current,
+    onClickListener: () -> Unit = {},
 ) {
     Card(
         modifier = modifier
             .width(dimensionResource(id = R.dimen.width_alcohol_filter_card))
             .height(dimensionResource(id = R.dimen.height_alcohol_filter_card))
             .clickable {
-                onClickListener(model.type)
+                onClickListener()
             }
     ) {
         Box {

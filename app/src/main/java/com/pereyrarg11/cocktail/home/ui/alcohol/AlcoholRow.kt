@@ -9,11 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
+import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 import com.pereyrarg11.cocktail.home.data.AlcoholFilterType
 import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
-import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
-// TODO: apply state hoisting to the onClickListener
 @Composable
 fun AlcoholRow(
     alcoholItems: List<AlcoholDisplayable>,
@@ -26,7 +25,9 @@ fun AlcoholRow(
         contentPadding = PaddingValues(horizontal = dimensionResource(id = R.dimen.size_md)),
     ) {
         items(alcoholItems) { model ->
-            AlcoholCard(model = model, onClickListener = onItemClickListener)
+            AlcoholCard(model = model) {
+                onItemClickListener(model.type)
+            }
         }
     }
 }
