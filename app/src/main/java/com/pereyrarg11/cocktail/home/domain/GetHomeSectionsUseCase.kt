@@ -9,5 +9,6 @@ class GetHomeSectionsUseCase @Inject constructor(
     private val repository: HomeSectionsRepository,
 ) {
 
+    // TODO: set a random order for section items
     operator fun invoke(): Flow<List<HomeSectionContent>> = repository.getAllSections()
 }

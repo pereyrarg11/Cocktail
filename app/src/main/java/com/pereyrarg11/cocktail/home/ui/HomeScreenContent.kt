@@ -43,9 +43,10 @@ fun HomeScreenContent(
                         )
                     }
                     CATEGORIES -> {
-                        CategoryGrid(categoryItems = section.categoryItems) { categoryFilter ->
-                            onCategoryClickListener(categoryFilter)
-                        }
+                        CategoryGrid(
+                            categoryItems = section.categoryItems,
+                            onCategoryClickListener = onCategoryClickListener
+                        )
                     }
                     UNKNOWN -> {}
                 }
