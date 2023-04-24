@@ -8,12 +8,17 @@ import javax.inject.Singleton
 @Singleton
 class HomeSectionProvider @Inject constructor(
     alcoholProvider: AlcoholContentProvider,
+    categoryProvider: CategoryContentProvider,
 ) {
 
     val sections: List<HomeSectionContent> = listOf(
         HomeSectionContent(
             type = HomeSectionType.ALCOHOL,
             alcoholItems = alcoholProvider.alcoholItems
+        ),
+        HomeSectionContent(
+            type = HomeSectionType.CATEGORIES,
+            categoryItems = categoryProvider.categoryItems
         ),
     )
 }

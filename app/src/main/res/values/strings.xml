@@ -22,4 +22,5 @@
     <string name="title_category_filter_shot">Shot</string>
     <string name="title_category_filter_beer">Beer</string>
     <string name="title_category_filter_coffee_and_tea">Coffee and Tea</string>
+    <string name="title_categories">Categories</string>
 </resources>

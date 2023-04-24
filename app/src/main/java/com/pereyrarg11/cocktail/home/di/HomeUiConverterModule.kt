@@ -1,14 +1,13 @@
 package com.pereyrarg11.cocktail.home.di
 
+import com.pereyrarg11.cocktail.common.data.Converter
 import com.pereyrarg11.cocktail.home.data.repository.model.AlcoholContent
+import com.pereyrarg11.cocktail.home.data.repository.model.CategoryContent
 import com.pereyrarg11.cocktail.home.data.repository.model.HomeSectionContent
 import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
+import com.pereyrarg11.cocktail.home.ui.model.CategoryDisplayable
 import com.pereyrarg11.cocktail.home.ui.model.HomeSectionDisplayable
-import com.pereyrarg11.cocktail.home.ui.model.converter.AlcoholDisplayableConverter
-import com.pereyrarg11.cocktail.home.ui.model.converter.AlcoholDisplayableListConverter
-import com.pereyrarg11.cocktail.home.ui.model.converter.HomeSectionDisplayableConverter
-import com.pereyrarg11.cocktail.home.ui.model.converter.HomeSectionDisplayableListConverter
-import com.pereyrarg11.cocktail.common.data.Converter
+import com.pereyrarg11.cocktail.home.ui.model.converter.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -37,4 +36,14 @@ abstract class HomeUiConverterModule {
     abstract fun bindsHomeSectionDisplayableListConverter(
         converter: HomeSectionDisplayableListConverter
     ): Converter<List<HomeSectionContent>, List<HomeSectionDisplayable>>
+
+    @Binds
+    abstract fun bindsCategoryDisplayableConverter(
+        converter: CategoryDisplayableConverter
+    ): Converter<CategoryContent, CategoryDisplayable>
+
+    @Binds
+    abstract fun bindsCategoryDisplayableListConverter(
+        converter: CategoryDisplayableListConverter
+    ): Converter<List<CategoryContent>, List<CategoryDisplayable>>
 }

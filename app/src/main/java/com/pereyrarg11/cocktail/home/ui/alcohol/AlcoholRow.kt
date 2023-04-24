@@ -13,6 +13,7 @@ import com.pereyrarg11.cocktail.home.data.AlcoholFilterType
 import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
+// TODO: apply state hoisting to the onClickListener
 @Composable
 fun AlcoholRow(
     alcoholItems: List<AlcoholDisplayable>,

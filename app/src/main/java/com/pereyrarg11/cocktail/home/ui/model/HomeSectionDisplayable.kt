@@ -8,4 +8,5 @@ data class HomeSectionDisplayable(
     val labelResource: Int = 0,
     val type: HomeSectionType = HomeSectionType.UNKNOWN,
     val alcoholItems: List<AlcoholDisplayable> = emptyList(),
+    val categoryItems: List<CategoryDisplayable> = emptyList(),
 )

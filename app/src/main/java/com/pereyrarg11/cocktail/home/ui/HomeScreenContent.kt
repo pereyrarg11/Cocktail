@@ -9,18 +9,21 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
+import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 import com.pereyrarg11.cocktail.home.data.AlcoholFilterType
-import com.pereyrarg11.cocktail.home.data.HomeSectionType
+import com.pereyrarg11.cocktail.home.data.CategoryFilterType
+import com.pereyrarg11.cocktail.home.data.HomeSectionType.*
 import com.pereyrarg11.cocktail.home.ui.alcohol.AlcoholRow
+import com.pereyrarg11.cocktail.home.ui.category.CategoryGrid
 import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
 import com.pereyrarg11.cocktail.home.ui.model.HomeSectionDisplayable
-import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 
 @Composable
 fun HomeScreenContent(
     sections: List<HomeSectionDisplayable>,
     modifier: Modifier = Modifier,
     onAlcoholClickListener: (AlcoholFilterType) -> Unit = {},
+    onCategoryClickListener: (CategoryFilterType) -> Unit = {},
 ) {
     Column(modifier = modifier) {
         sections.forEach { section ->
@@ -33,13 +36,18 @@ fun HomeScreenContent(
             HomeScreenSlot(label = label) {
                 /* set the @Composable content */
                 when (section.type) {
-                    HomeSectionType.ALCOHOL -> {
+                    ALCOHOL -> {
                         AlcoholRow(
                             alcoholItems = section.alcoholItems,
                             onItemClickListener = onAlcoholClickListener,
                         )
                     }
-                    HomeSectionType.UNKNOWN -> {}
+                    CATEGORIES -> {
+                        CategoryGrid(categoryItems = section.categoryItems) { categoryFilter ->
+                            onCategoryClickListener(categoryFilter)
+                        }
+                    }
+                    UNKNOWN -> {}
                 }
             }
         }
@@ -55,7 +63,7 @@ fun CategoriesScreenContentPreview() {
         HomeScreenContent(
             sections = listOf(
                 HomeSectionDisplayable(
-                    type = HomeSectionType.ALCOHOL,
+                    type = ALCOHOL,
                     alcoholItems = listOf(
                         AlcoholDisplayable(
                             labelResource = R.string.title_alcohol_filter_alcoholic,
