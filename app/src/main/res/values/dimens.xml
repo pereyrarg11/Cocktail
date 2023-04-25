@@ -16,4 +16,7 @@
     <!-- Home / Ingredients -->
     <dimen name="width_ingredient_filter_stroke">2dp</dimen>
     <dimen name="size_ingredient_filter_image">100dp</dimen>
+
+    <!-- Filtered Drinks -->
+    <dimen name="size_filtered_drink_image">100dp</dimen>
 </resources>
