@@ -13,11 +13,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.pereyrarg11.cocktail.home.ui.HomeScreen
-import com.pereyrarg11.cocktail.home.ui.alcoholic.AlcoholicScreen
+import com.pereyrarg11.cocktail.common.data.FilterType
 import com.pereyrarg11.cocktail.common.ui.navigation.Arguments
 import com.pereyrarg11.cocktail.common.ui.navigation.Routes
 import com.pereyrarg11.cocktail.detail.ui.DrinkDetailScreen
+import com.pereyrarg11.cocktail.filteredDrinks.ui.FilteredDrinksScreen
+import com.pereyrarg11.cocktail.home.ui.HomeScreen
+import com.pereyrarg11.cocktail.home.ui.alcoholic.AlcoholicScreen
 import com.pereyrarg11.cocktail.ui.theme.CocktailTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,7 +53,7 @@ fun CocktailAppContent(
             navController = navController,
             startDestination = Routes.HomeScreen.route,
         ) {
-            composable(Routes.HomeScreen.route) { HomeScreen() }
+            composable(Routes.HomeScreen.route) { HomeScreen(navController) }
 
             composable(Routes.CocktailsScreen.route) { AlcoholicScreen(navController) }
 
@@ -64,6 +66,51 @@ fun CocktailAppContent(
                 DrinkDetailScreen(
                     cocktailId = navBackStackEntry.arguments?.getString(Arguments.ID.label) ?: "",
                     navController = navController,
+                )
+            }
+
+            composable(
+                route = Routes.AlcoholDrinksScreen.route,
+                arguments = listOf(
+                    navArgument(Arguments.QUERY.label) { type = NavType.StringType },
+                    navArgument(Arguments.TITLE.label) { type = NavType.StringType },
+                )
+            ) { navBackStackEntry ->
+                FilteredDrinksScreen(
+                    query = navBackStackEntry.arguments?.getString(Arguments.QUERY.label) ?: "",
+                    title = navBackStackEntry.arguments?.getString(Arguments.TITLE.label) ?: "",
+                    filterType = FilterType.ALCOHOL,
+                    navHostController = navController
+                )
+            }
+
+            composable(
+                route = Routes.CategoryDrinksScreen.route,
+                arguments = listOf(
+                    navArgument(Arguments.QUERY.label) { type = NavType.StringType },
+                    navArgument(Arguments.TITLE.label) { type = NavType.StringType },
+                )
+            ) { navBackStackEntry ->
+                FilteredDrinksScreen(
+                    query = navBackStackEntry.arguments?.getString(Arguments.QUERY.label) ?: "",
+                    title = navBackStackEntry.arguments?.getString(Arguments.TITLE.label) ?: "",
+                    filterType = FilterType.CATEGORY,
+                    navHostController = navController
+                )
+            }
+
+            composable(
+                route = Routes.IngredientDrinksScreen.route,
+                arguments = listOf(
+                    navArgument(Arguments.QUERY.label) { type = NavType.StringType },
+                    navArgument(Arguments.TITLE.label) { type = NavType.StringType },
+                )
+            ) { navBackStackEntry ->
+                FilteredDrinksScreen(
+                    query = navBackStackEntry.arguments?.getString(Arguments.QUERY.label) ?: "",
+                    title = navBackStackEntry.arguments?.getString(Arguments.TITLE.label) ?: "",
+                    filterType = FilterType.INGREDIENT,
+                    navHostController = navController
                 )
             }
         }

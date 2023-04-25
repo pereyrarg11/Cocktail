@@ -1,9 +1,7 @@
 package com.pereyrarg11.cocktail.detail.ui
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.*
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
@@ -15,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavHostController
 import com.pereyrarg11.cocktail.R
+import com.pereyrarg11.cocktail.common.ui.CommonAppBar
 import com.pereyrarg11.cocktail.common.ui.ErrorScreen
 import com.pereyrarg11.cocktail.common.ui.LoadingScreen
 import com.pereyrarg11.cocktail.detail.ui.DrinkDetailUiState.*
@@ -38,7 +37,13 @@ fun DrinkDetailScreen(
     }
 
     Scaffold(
-        topBar = { DrinkDetailAppBar(navController) },
+        topBar = {
+            CommonAppBar(
+                title = stringResource(R.string.title_drink),
+            ) {
+                navController.popBackStack()
+            }
+        },
         modifier = modifier,
     ) { innerPadding ->
         when (uiState) {
@@ -57,24 +62,4 @@ fun DrinkDetailScreen(
             }
         }
     }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun DrinkDetailAppBar(navController: NavHostController) {
-    TopAppBar(
-        title = {
-            Text(text = stringResource(R.string.title_drink))
-        },
-        navigationIcon = {
-            IconButton(
-                onClick = { navController.popBackStack() },
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.action_back)
-                )
-            }
-        },
-    )
 }
