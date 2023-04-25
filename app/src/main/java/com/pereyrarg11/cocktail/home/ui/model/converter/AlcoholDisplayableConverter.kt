@@ -32,9 +32,9 @@ class AlcoholDisplayableConverter @Inject constructor() :
     @StringRes
     private fun getLabelResourceByType(type: AlcoholFilterType): Int {
         return when (type) {
-            ALCOHOLIC -> R.string.title_alcohol_filter_alcoholic
-            NON_ALCOHOLIC -> R.string.title_alcohol_filter_non_alcoholic
-            OPTIONAL_ALCOHOL -> R.string.title_alcohol_filter_alcohol_optional
+            ALCOHOLIC -> R.string.title_alcohol_alcoholic
+            NON_ALCOHOLIC -> R.string.title_alcohol_non_alcoholic
+            OPTIONAL_ALCOHOL -> R.string.title_alcohol_alcohol_optional
             UNKNOWN -> 0
         }
     }

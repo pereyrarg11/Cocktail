@@ -60,27 +60,27 @@ fun CategoryGridPreview() {
     CategoryGrid(
         categoryItems = listOf(
             CategoryDisplayable(
-                labelResource = R.string.title_category_filter_cocktail,
+                labelResource = R.string.title_category_cocktail,
                 imageUrl = "https://www.thecocktaildb.com/images/media/drink/rptuxy1472669372.jpg",
                 type = CategoryFilterType.COCKTAIL,
             ),
             CategoryDisplayable(
-                labelResource = R.string.title_category_filter_shake,
+                labelResource = R.string.title_category_shake,
                 imageUrl = "https://www.thecocktaildb.com/images/media/drink/uvypss1472720581.jpg",
                 type = CategoryFilterType.SHAKE,
             ),
             CategoryDisplayable(
-                labelResource = R.string.title_category_filter_shot,
+                labelResource = R.string.title_category_shot,
                 imageUrl = "https://www.thecocktaildb.com/images/media/drink/rtpxqw1468877562.jpg",
                 type = CategoryFilterType.SHOT,
             ),
             CategoryDisplayable(
-                labelResource = R.string.title_category_filter_beer,
+                labelResource = R.string.title_category_beer,
                 imageUrl = "https://www.thecocktaildb.com/images/media/drink/rwpswp1454511017.jpg",
                 type = CategoryFilterType.BEER,
             ),
             CategoryDisplayable(
-                labelResource = R.string.title_category_filter_coffee_and_tea,
+                labelResource = R.string.title_category_coffee_and_tea,
                 imageUrl = "https://www.thecocktaildb.com/images/media/drink/vqwptt1441247711.jpg",
                 type = CategoryFilterType.COFFEE_AND_TEA,
             ),

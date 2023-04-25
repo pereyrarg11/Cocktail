@@ -23,11 +23,11 @@ class CategoryDisplayableConverter @Inject constructor() :
     @StringRes
     private fun getLabelResourceByType(type: CategoryFilterType): Int {
         return when (type) {
-            COCKTAIL -> R.string.title_category_filter_cocktail
-            SHAKE -> R.string.title_category_filter_shake
-            SHOT -> R.string.title_category_filter_shot
-            BEER -> R.string.title_category_filter_beer
-            COFFEE_AND_TEA -> R.string.title_category_filter_coffee_and_tea
+            COCKTAIL -> R.string.title_category_cocktail
+            SHAKE -> R.string.title_category_shake
+            SHOT -> R.string.title_category_shot
+            BEER -> R.string.title_category_beer
+            COFFEE_AND_TEA -> R.string.title_category_coffee_and_tea
             MORE,
             UNKNOWN -> 0
         }

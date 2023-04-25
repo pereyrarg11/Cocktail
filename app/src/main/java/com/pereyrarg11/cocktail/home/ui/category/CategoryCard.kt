@@ -72,7 +72,7 @@ fun CategoryCard(
 fun CategoryCardPreview() {
     CategoryCard(
         model = CategoryDisplayable(
-            labelResource = R.string.title_category_filter_coffee_and_tea,
+            labelResource = R.string.title_category_coffee_and_tea,
             imageUrl = "https://www.thecocktaildb.com/images/media/drink/vqwptt1441247711.jpg",
             type = CategoryFilterType.COFFEE_AND_TEA,
         )

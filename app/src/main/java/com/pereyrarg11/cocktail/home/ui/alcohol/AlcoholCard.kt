@@ -95,7 +95,7 @@ fun AlcoholCard(
 fun AlcoholCardPreview() {
     CocktailPreview {
         AlcoholCard(
-            model = AlcoholDisplayable(R.string.title_alcohol_filter_non_alcoholic)
+            model = AlcoholDisplayable(R.string.title_alcohol_non_alcoholic)
         )
     }
 }

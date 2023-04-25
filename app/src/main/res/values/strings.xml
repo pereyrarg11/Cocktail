@@ -13,16 +13,15 @@
     <string name="title_preparation">How to prepare?</string>
 
     <!-- Home -->
-    <!-- TODO: these names could be simplified/shortened -->
-    <string name="title_alcohol_filter_alcoholic">Alcoholic</string>
-    <string name="title_alcohol_filter_non_alcoholic">Non Alcoholic</string>
-    <string name="title_alcohol_filter_alcohol_optional">Optional</string>
+    <string name="title_alcohol_alcoholic">Alcoholic</string>
+    <string name="title_alcohol_non_alcoholic">Non Alcoholic</string>
+    <string name="title_alcohol_alcohol_optional">Optional</string>
     <!-- Home / Categories -->
-    <string name="title_category_filter_cocktail">Cocktail</string>
-    <string name="title_category_filter_shake">Shake</string>
-    <string name="title_category_filter_shot">Shot</string>
-    <string name="title_category_filter_beer">Beer</string>
-    <string name="title_category_filter_coffee_and_tea">Coffee and Tea</string>
+    <string name="title_category_cocktail">Cocktail</string>
+    <string name="title_category_shake">Shake</string>
+    <string name="title_category_shot">Shot</string>
+    <string name="title_category_beer">Beer</string>
+    <string name="title_category_coffee_and_tea">Coffee and Tea</string>
     <string name="title_categories">Categories</string>
     <!-- Home / Ingredients -->
     <string name="title_ingredient_gin">Gin</string>
