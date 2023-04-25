@@ -1,13 +1,37 @@
 <resources>
     <!-- Common -->
     <string name="app_name">Cocktail</string>
-    <string name="error_try_later">Ocurrió un error.\nIntenta más tarde</string>
-    <string name="message_loading">Cargando</string>
-    <string name="action_back">Volver</string>
+    <string name="error_try_later">Something went wrong.\nTry later</string>
+    <string name="message_loading">Loading</string>
+    <string name="action_back">Back</string>
+    <string name="action_see_more">See More</string>
 
     <!-- Drink detail -->
-    <string name="title_drink">Bebida</string>
-    <string name="title_glass_type">Tipo de Vaso</string>
-    <string name="title_ingredients">Ingredientes</string>
-    <string name="title_preparation">Preparación</string>
+    <string name="title_drink">Drink</string>
+    <string name="title_glass_type">Glass</string>
+    <string name="title_ingredients">Ingredients</string>
+    <string name="title_preparation">How to prepare?</string>
+
+    <!-- Home -->
+    <string name="title_alcohol_alcoholic">Alcoholic</string>
+    <string name="title_alcohol_non_alcoholic">Non Alcoholic</string>
+    <string name="title_alcohol_alcohol_optional">Optional</string>
+    <!-- Home / Categories -->
+    <string name="title_category_cocktail">Cocktail</string>
+    <string name="title_category_shake">Shake</string>
+    <string name="title_category_shot">Shot</string>
+    <string name="title_category_beer">Beer</string>
+    <string name="title_category_coffee_and_tea">Coffee and Tea</string>
+    <string name="title_categories">Categories</string>
+    <!-- Home / Ingredients -->
+    <string name="title_ingredient_gin">Gin</string>
+    <string name="title_ingredient_scotch">Scotch</string>
+    <string name="title_ingredient_brandy">Brandy</string>
+    <string name="title_ingredient_champagne">Champagne</string>
+    <string name="title_ingredient_tequila">Tequila</string>
+    <string name="title_ingredient_vodka">Vodka</string>
+    <string name="title_ingredient_kahlua">Kahlua</string>
+    <string name="title_ingredient_whiskey">Whiskey</string>
+    <string name="title_ingredient_cognac">Cognac</string>
+    <string name="title_ingredient_pisco">Pisco</string>
 </resources>

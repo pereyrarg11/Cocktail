@@ -6,4 +6,14 @@
     <dimen name="size_xs">4dp</dimen>
     <dimen name="size_xlg">32dp</dimen>
     <dimen name="size_xxlg">48dp</dimen>
+
+    <!-- Home -->
+    <dimen name="height_alcohol_filter_card">270dp</dimen>
+    <dimen name="width_alcohol_filter_card">180dp</dimen>
+    <!-- Home / Categories -->
+    <dimen name="height_category_filter_card">100dp</dimen>
+    <dimen name="width_category_filter_card">250dp</dimen>
+    <!-- Home / Ingredients -->
+    <dimen name="width_ingredient_filter_stroke">2dp</dimen>
+    <dimen name="size_ingredient_filter_image">100dp</dimen>
 </resources>
