@@ -4,9 +4,11 @@ import com.pereyrarg11.cocktail.common.data.Converter
 import com.pereyrarg11.cocktail.home.data.repository.model.AlcoholContent
 import com.pereyrarg11.cocktail.home.data.repository.model.CategoryContent
 import com.pereyrarg11.cocktail.home.data.repository.model.HomeSectionContent
+import com.pereyrarg11.cocktail.home.data.repository.model.IngredientContent
 import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
 import com.pereyrarg11.cocktail.home.ui.model.CategoryDisplayable
 import com.pereyrarg11.cocktail.home.ui.model.HomeSectionDisplayable
+import com.pereyrarg11.cocktail.home.ui.model.IngredientDisplayable
 import com.pereyrarg11.cocktail.home.ui.model.converter.*
 import dagger.Binds
 import dagger.Module
@@ -46,4 +48,14 @@ abstract class HomeUiConverterModule {
     abstract fun bindsCategoryDisplayableListConverter(
         converter: CategoryDisplayableListConverter
     ): Converter<List<CategoryContent>, List<CategoryDisplayable>>
+
+    @Binds
+    abstract fun bindsIngredientDisplayableConverter(
+        converter: IngredientDisplayableConverter
+    ): Converter<IngredientContent, IngredientDisplayable>
+
+    @Binds
+    abstract fun bindsIngredientDisplayableListConverter(
+        converter: IngredientDisplayableListConverter
+    ): Converter<List<IngredientContent>, List<IngredientDisplayable>>
 }
