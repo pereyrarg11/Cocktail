@@ -9,4 +9,5 @@ data class HomeSectionDisplayable(
     val type: HomeSectionType = HomeSectionType.UNKNOWN,
     val alcoholItems: List<AlcoholDisplayable> = emptyList(),
     val categoryItems: List<CategoryDisplayable> = emptyList(),
+    val ingredientItems: List<IngredientDisplayable> = emptyList(),
 )

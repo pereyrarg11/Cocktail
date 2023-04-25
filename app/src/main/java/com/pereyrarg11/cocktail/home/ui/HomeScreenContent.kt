@@ -3,6 +3,8 @@ package com.pereyrarg11.cocktail.home.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -13,8 +15,10 @@ import com.pereyrarg11.cocktail.common.ui.CocktailPreview
 import com.pereyrarg11.cocktail.home.data.AlcoholFilterType
 import com.pereyrarg11.cocktail.home.data.CategoryFilterType
 import com.pereyrarg11.cocktail.home.data.HomeSectionType.*
+import com.pereyrarg11.cocktail.home.data.IngredientFilterType
 import com.pereyrarg11.cocktail.home.ui.alcohol.AlcoholRow
 import com.pereyrarg11.cocktail.home.ui.category.CategoryGrid
+import com.pereyrarg11.cocktail.home.ui.ingredient.IngredientRow
 import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
 import com.pereyrarg11.cocktail.home.ui.model.HomeSectionDisplayable
 
@@ -24,8 +28,11 @@ fun HomeScreenContent(
     modifier: Modifier = Modifier,
     onAlcoholClickListener: (AlcoholFilterType) -> Unit = {},
     onCategoryClickListener: (CategoryFilterType) -> Unit = {},
+    onIngredientClickListener: (IngredientFilterType) -> Unit = {},
 ) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier.verticalScroll(rememberScrollState()),
+    ) {
         sections.forEach { section ->
             val label = if (section.labelResource != 0) {
                 stringResource(id = section.labelResource)
@@ -46,6 +53,12 @@ fun HomeScreenContent(
                         CategoryGrid(
                             categoryItems = section.categoryItems,
                             onCategoryClickListener = onCategoryClickListener
+                        )
+                    }
+                    INGREDIENTS -> {
+                        IngredientRow(
+                            ingredientItems = section.ingredientItems,
+                            onItemClickListener = onIngredientClickListener
                         )
                     }
                     UNKNOWN -> {}

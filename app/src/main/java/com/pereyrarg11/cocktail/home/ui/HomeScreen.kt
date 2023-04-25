@@ -46,7 +46,10 @@ fun HomeScreen(
                     },
                     onCategoryClickListener = { categoryFilter ->
                         Log.d("HomeScreen", "category: ${categoryFilter.name}")
-                    }
+                    },
+                    onIngredientClickListener = { ingredientFilter ->
+                        Log.d("HomeScreen", "ingredient: ${ingredientFilter.name}")
+                    },
                 )
             }
         }
