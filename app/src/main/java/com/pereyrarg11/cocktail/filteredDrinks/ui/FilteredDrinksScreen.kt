@@ -15,6 +15,7 @@ import com.pereyrarg11.cocktail.common.data.FilterType
 import com.pereyrarg11.cocktail.common.ui.CommonAppBar
 import com.pereyrarg11.cocktail.common.ui.ErrorScreen
 import com.pereyrarg11.cocktail.common.ui.LoadingScreen
+import com.pereyrarg11.cocktail.common.ui.NoResultsScreen
 import com.pereyrarg11.cocktail.common.ui.navigation.Routes
 import com.pereyrarg11.cocktail.filteredDrinks.ui.FilteredDrinksUiState.*
 
@@ -50,12 +51,17 @@ fun FilteredDrinksScreen(
             is Error -> ErrorScreen(modifier = Modifier.padding(innerPadding))
             Loading -> LoadingScreen(modifier = Modifier.padding(innerPadding))
             is Success -> {
-                // TODO: set a screen for "No results"
-                FilteredDrinkScreenContent(
-                    drinkList = (uiState as Success).drinks,
-                    modifier = Modifier.padding(innerPadding)
-                ) { drinkId ->
-                    navHostController.navigate(Routes.CocktailDetailScreen.createRoute(drinkId))
+                val drinks = (uiState as Success).drinks
+
+                if (drinks.isEmpty()) {
+                    NoResultsScreen(modifier = Modifier.padding(innerPadding))
+                } else {
+                    FilteredDrinkScreenContent(
+                        drinkList = drinks,
+                        modifier = Modifier.padding(innerPadding)
+                    ) { drinkId ->
+                        navHostController.navigate(Routes.CocktailDetailScreen.createRoute(drinkId))
+                    }
                 }
             }
         }

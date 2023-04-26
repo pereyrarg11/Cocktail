@@ -4,9 +4,10 @@ sealed class Routes(val route: String) {
 
     object HomeScreen : Routes("home")
 
-    // TODO: rename to drink/{id}
-    object CocktailDetailScreen : Routes("cocktails/{id}") {
-        fun createRoute(id: String) = "cocktails/$id"
+    object CocktailDetailScreen : Routes("drink/{id}") {
+
+        fun createRoute(id: String) = "drink/$id"
+
     }
 
     object AlcoholDrinksScreen : Routes("alcohol/drinks?query={query}&title={title}") {

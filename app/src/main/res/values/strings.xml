@@ -3,6 +3,7 @@
     <string name="app_name">Cocktail</string>
     <string name="error_try_later">Something went wrong.\nTry later</string>
     <string name="message_loading">Loading</string>
+    <string name="message_no_results_found">No results found.</string>
     <string name="action_back">Back</string>
     <string name="action_see_more">See More</string>
 
