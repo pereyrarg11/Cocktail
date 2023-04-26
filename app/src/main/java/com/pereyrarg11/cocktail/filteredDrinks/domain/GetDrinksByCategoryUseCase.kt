@@ -5,10 +5,10 @@ import com.pereyrarg11.cocktail.filteredDrinks.data.repository.model.DrinkConten
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetDrinksByAlcoholUseCase @Inject constructor(
+class GetDrinksByCategoryUseCase @Inject constructor(
     private val repository: DrinksRepository,
 ) {
 
     operator fun invoke(query: String): Flow<List<DrinkContent>> =
-        repository.getDrinksByAlcohol(query)
+        repository.getDrinksByCategory(query)
 }

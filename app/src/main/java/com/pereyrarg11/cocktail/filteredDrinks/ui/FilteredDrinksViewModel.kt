@@ -7,6 +7,7 @@ import com.pereyrarg11.cocktail.common.data.FilterType
 import com.pereyrarg11.cocktail.common.data.FilterType.*
 import com.pereyrarg11.cocktail.filteredDrinks.data.repository.model.DrinkContent
 import com.pereyrarg11.cocktail.filteredDrinks.domain.GetDrinksByAlcoholUseCase
+import com.pereyrarg11.cocktail.filteredDrinks.domain.GetDrinksByCategoryUseCase
 import com.pereyrarg11.cocktail.filteredDrinks.ui.FilteredDrinksUiState.*
 import com.pereyrarg11.cocktail.filteredDrinks.ui.model.DrinkDisplayable
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,13 +17,14 @@ import javax.inject.Inject
 @HiltViewModel
 class FilteredDrinksViewModel @Inject constructor(
     val getDrinksByAlcoholUseCase: GetDrinksByAlcoholUseCase,
+    val getDrinksByCategoryUseCase: GetDrinksByCategoryUseCase,
     private val drinksConverter: Converter<List<DrinkContent>, List<DrinkDisplayable>>,
 ) : ViewModel() {
 
     fun filterDrinks(filterType: FilterType, query: String): StateFlow<FilteredDrinksUiState> {
         val flow: Flow<List<DrinkContent>> = when (filterType) {
             ALCOHOL -> getDrinksByAlcoholUseCase(query)
-            CATEGORY,
+            CATEGORY -> getDrinksByCategoryUseCase(query)
             INGREDIENT,
             UNKNOWN -> flow { emit(emptyList()) }
         }

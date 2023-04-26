@@ -11,4 +11,9 @@ interface FilterClient {
     suspend fun filterDrinksByAlcohol(
         @Query("a") query: String,
     ): Response<DrinkListSchema>
+
+    @GET("filter.php")
+    suspend fun filterDrinksByCategory(
+        @Query("c") query: String,
+    ): Response<DrinkListSchema>
 }

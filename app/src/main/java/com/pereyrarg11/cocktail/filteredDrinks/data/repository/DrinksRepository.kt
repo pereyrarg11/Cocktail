@@ -6,13 +6,15 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class AlcoholFilterRepository @Inject constructor(
+class DrinksRepository @Inject constructor(
     private val api: FilteredDrinksService,
 ) {
 
     fun getDrinksByAlcohol(query: String): Flow<List<DrinkContent>> = flow {
-        emit(
-            api.filterDrinksByAlcohol(query)
-        )
+        emit(api.filterDrinksByAlcohol(query))
+    }
+
+    fun getDrinksByCategory(query: String): Flow<List<DrinkContent>> = flow {
+        emit(api.filterDrinksByCategory(query))
     }
 }

@@ -6,6 +6,7 @@ import com.pereyrarg11.cocktail.filteredDrinks.data.network.model.DrinkListSchem
 import com.pereyrarg11.cocktail.filteredDrinks.data.repository.model.DrinkContent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import retrofit2.Response
 import javax.inject.Inject
 
 class FilteredDrinksService @Inject constructor(
@@ -15,13 +16,25 @@ class FilteredDrinksService @Inject constructor(
 
     suspend fun filterDrinksByAlcohol(query: String): List<DrinkContent> {
         return withContext(Dispatchers.IO) {
-            val responseBody = apiClient.filterDrinksByAlcohol(query).body()
+            val response = apiClient.filterDrinksByAlcohol(query)
+            handleResponse(response)
+        }
+    }
 
-            if (responseBody != null) {
-                converter.convert(responseBody)
-            } else {
-                emptyList()
-            }
+    suspend fun filterDrinksByCategory(query: String): List<DrinkContent> {
+        return withContext(Dispatchers.IO) {
+            val response = apiClient.filterDrinksByCategory(query)
+            handleResponse(response)
+        }
+    }
+
+    private fun handleResponse(response: Response<DrinkListSchema>): List<DrinkContent> {
+        val body = response.body()
+
+        return if (body != null) {
+            converter.convert(body)
+        } else {
+            emptyList()
         }
     }
 }
