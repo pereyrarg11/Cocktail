@@ -1,7 +1,7 @@
 package com.pereyrarg11.cocktail.home.data.network.service
 
 import com.pereyrarg11.cocktail.home.data.network.client.AlcoholCategoryClient
-import com.pereyrarg11.cocktail.home.data.network.model.schema.CocktailListSchema
+import com.pereyrarg11.cocktail.filteredDrinks.data.network.model.DrinkListSchema
 import com.pereyrarg11.cocktail.home.ui.model.CocktailModel
 import com.pereyrarg11.cocktail.common.data.Converter
 import kotlinx.coroutines.Dispatchers
@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class AlcoholCategoryService @Inject constructor(
     private val apiClient: AlcoholCategoryClient,
-    private val converter: Converter<CocktailListSchema, List<CocktailModel>>,
+    private val converter: Converter<DrinkListSchema, List<CocktailModel>>,
 ) {
 
     suspend fun filterCocktailListByAlcoholCategory(category: String): List<CocktailModel> {

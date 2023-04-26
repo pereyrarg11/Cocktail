@@ -1,8 +1,8 @@
-package com.pereyrarg11.cocktail.home.data.network.model.schema
+package com.pereyrarg11.cocktail.filteredDrinks.data.network.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CocktailSchema(
+data class DrinkSchema(
     @SerializedName("strDrink")
     val strDrink: String?,
     @SerializedName("strDrinkThumb")
