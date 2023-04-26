@@ -28,6 +28,13 @@ class FilteredDrinksService @Inject constructor(
         }
     }
 
+    suspend fun filterDrinksByIngredient(query: String): List<DrinkContent> {
+        return withContext(Dispatchers.IO) {
+            val response = apiClient.filterDrinksByIngredient(query)
+            handleResponse(response)
+        }
+    }
+
     private fun handleResponse(response: Response<DrinkListSchema>): List<DrinkContent> {
         val body = response.body()
 

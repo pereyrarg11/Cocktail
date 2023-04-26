@@ -17,4 +17,8 @@ class DrinksRepository @Inject constructor(
     fun getDrinksByCategory(query: String): Flow<List<DrinkContent>> = flow {
         emit(api.filterDrinksByCategory(query))
     }
+
+    fun getDrinksByIngredient(query: String): Flow<List<DrinkContent>> = flow {
+        emit(api.filterDrinksByIngredient(query))
+    }
 }
