@@ -4,9 +4,6 @@ sealed class Routes(val route: String) {
 
     object HomeScreen : Routes("home")
 
-    // TODO: delete after filter implementation
-    object CocktailsScreen : Routes("cocktails")
-
     // TODO: rename to drink/{id}
     object CocktailDetailScreen : Routes("cocktails/{id}") {
         fun createRoute(id: String) = "cocktails/$id"

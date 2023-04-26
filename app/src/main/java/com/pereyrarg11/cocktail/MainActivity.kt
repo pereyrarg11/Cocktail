@@ -19,7 +19,6 @@ import com.pereyrarg11.cocktail.common.ui.navigation.Routes
 import com.pereyrarg11.cocktail.detail.ui.DrinkDetailScreen
 import com.pereyrarg11.cocktail.filteredDrinks.ui.FilteredDrinksScreen
 import com.pereyrarg11.cocktail.home.ui.HomeScreen
-import com.pereyrarg11.cocktail.home.ui.alcoholic.AlcoholicScreen
 import com.pereyrarg11.cocktail.ui.theme.CocktailTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -54,8 +53,6 @@ fun CocktailAppContent(
             startDestination = Routes.HomeScreen.route,
         ) {
             composable(Routes.HomeScreen.route) { HomeScreen(navController) }
-
-            composable(Routes.CocktailsScreen.route) { AlcoholicScreen(navController) }
 
             composable(
                 route = Routes.CocktailDetailScreen.route,
