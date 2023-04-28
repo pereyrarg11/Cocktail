@@ -26,9 +26,9 @@ import com.pereyrarg11.cocktail.home.ui.model.HomeSectionDisplayable
 fun HomeScreenContent(
     sections: List<HomeSectionDisplayable>,
     modifier: Modifier = Modifier,
-    onAlcoholClickListener: (AlcoholFilterType) -> Unit = {},
-    onCategoryClickListener: (CategoryFilterType) -> Unit = {},
-    onIngredientClickListener: (IngredientFilterType) -> Unit = {},
+    onAlcoholClickListener: (AlcoholFilterType, String) -> Unit = { _, _ -> },
+    onCategoryClickListener: (CategoryFilterType, String) -> Unit = { _, _ -> },
+    onIngredientClickListener: (IngredientFilterType, String) -> Unit = { _, _ -> },
 ) {
     Column(
         modifier = modifier.verticalScroll(rememberScrollState()),

@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.integerResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.home.data.CategoryFilterType
@@ -19,7 +20,7 @@ import com.pereyrarg11.cocktail.home.ui.model.CategoryDisplayable
 fun CategoryGrid(
     categoryItems: List<CategoryDisplayable>,
     modifier: Modifier = Modifier,
-    onCategoryClickListener: (CategoryFilterType) -> Unit = {},
+    onCategoryClickListener: (CategoryFilterType, String) -> Unit = { _, _ -> },
 ) {
     val maxRows = integerResource(id = R.integer.category_grid_max_rows)
     val padding = dimensionResource(id = R.dimen.size_md)
@@ -35,11 +36,17 @@ fun CategoryGrid(
         ),
     ) {
         items(categoryItems) { category ->
+            val label = if (category.labelResource != 0) {
+                stringResource(id = category.labelResource)
+            } else {
+                ""
+            }
+
             if (category.type == CategoryFilterType.MORE) {
                 CategoryMoreCard(
                     modifier = Modifier.height(cardHeight)
                 ) {
-                    onCategoryClickListener(CategoryFilterType.MORE)
+                    onCategoryClickListener(category.type, label)
                 }
 
             } else {
@@ -47,7 +54,7 @@ fun CategoryGrid(
                     model = category,
                     modifier = Modifier.height(cardHeight)
                 ) {
-                    onCategoryClickListener(category.type)
+                    onCategoryClickListener(category.type, label)
                 }
             }
         }

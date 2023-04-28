@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.home.data.IngredientFilterType
@@ -17,7 +18,7 @@ import com.pereyrarg11.cocktail.home.ui.model.IngredientDisplayable
 fun IngredientRow(
     ingredientItems: List<IngredientDisplayable>,
     modifier: Modifier = Modifier,
-    onItemClickListener: (IngredientFilterType) -> Unit = {},
+    onItemClickListener: (IngredientFilterType, String) -> Unit = { _, _ -> },
 ) {
     val cardPadding = dimensionResource(id = R.dimen.size_md)
 
@@ -27,14 +28,20 @@ fun IngredientRow(
         contentPadding = PaddingValues(horizontal = cardPadding),
     ) {
         items(ingredientItems) { ingredient ->
+            val title = if (ingredient.labelResource != 0) {
+                stringResource(id = ingredient.labelResource)
+            } else {
+                ""
+            }
+
             if (ingredient.type == MORE) {
                 IngredientMoreCard {
-                    onItemClickListener(MORE)
+                    onItemClickListener(ingredient.type, title)
                 }
 
             } else {
                 IngredientCard(model = ingredient) {
-                    onItemClickListener(ingredient.type)
+                    onItemClickListener(ingredient.type, title)
                 }
             }
         }

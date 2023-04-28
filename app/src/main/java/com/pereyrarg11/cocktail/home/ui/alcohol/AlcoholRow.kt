@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.pereyrarg11.cocktail.R
 import com.pereyrarg11.cocktail.common.ui.CocktailPreview
@@ -17,7 +18,7 @@ import com.pereyrarg11.cocktail.home.ui.model.AlcoholDisplayable
 fun AlcoholRow(
     alcoholItems: List<AlcoholDisplayable>,
     modifier: Modifier = Modifier,
-    onItemClickListener: (AlcoholFilterType) -> Unit = {},
+    onItemClickListener: (AlcoholFilterType, String) -> Unit = { _, _ -> },
 ) {
     LazyRow(
         modifier = modifier,
@@ -25,8 +26,14 @@ fun AlcoholRow(
         contentPadding = PaddingValues(horizontal = dimensionResource(id = R.dimen.size_md)),
     ) {
         items(alcoholItems) { model ->
+            val label = if (model.labelResource != 0) {
+                stringResource(id = model.labelResource)
+            } else {
+                ""
+            }
+
             AlcoholCard(model = model) {
-                onItemClickListener(model.type)
+                onItemClickListener(model.type, label)
             }
         }
     }
