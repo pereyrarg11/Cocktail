@@ -23,7 +23,7 @@ fun StickyHeaderCard(
             .fillMaxWidth()
             .padding(
                 horizontal = dimensionResource(id = R.dimen.size_md),
-                vertical = dimensionResource(id = R.dimen.size_sm)
+                vertical = dimensionResource(id = R.dimen.size_xs)
             ),
         color = MaterialTheme.colorScheme.onPrimary,
     )
