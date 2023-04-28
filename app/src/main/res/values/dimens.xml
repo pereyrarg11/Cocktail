@@ -19,4 +19,7 @@
 
     <!-- Filtered Drinks -->
     <dimen name="size_filtered_drink_image">100dp</dimen>
+
+    <!-- Ingredients -->
+    <dimen name="size_ingredient_filter_image_sm">50dp</dimen>
 </resources>
