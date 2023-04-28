@@ -1,4 +1,4 @@
-package com.pereyrarg11.cocktail.filters.ui
+package com.pereyrarg11.cocktail.ingredients.ui
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.lazy.LazyColumn

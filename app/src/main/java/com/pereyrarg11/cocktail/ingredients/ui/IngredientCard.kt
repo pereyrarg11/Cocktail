@@ -1,4 +1,4 @@
-package com.pereyrarg11.cocktail.filters.ui
+package com.pereyrarg11.cocktail.ingredients.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size
