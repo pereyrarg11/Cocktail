@@ -13,7 +13,15 @@ class DrinkDisplayableConverter @Inject constructor() : Converter<DrinkContent, 
         return DrinkDisplayable(
             id = input.id,
             name = input.name,
-            imageUrl = input.imageUrl,
+            imageUrl = transformImageUrl(input.imageUrl),
         )
+    }
+
+    private fun transformImageUrl(imageUrl: String): String {
+        return if (imageUrl.isNotEmpty()) {
+            "$imageUrl/preview"
+        } else {
+            ""
+        }
     }
 }
