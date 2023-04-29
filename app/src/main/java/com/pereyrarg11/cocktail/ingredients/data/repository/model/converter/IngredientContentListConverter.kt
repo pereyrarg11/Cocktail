@@ -10,6 +10,8 @@ class IngredientContentListConverter @Inject constructor(
 ) : Converter<@JvmSuppressWildcards List<IngredientSchema>, @JvmSuppressWildcards List<FilterContent>> {
 
     override fun convert(input: List<IngredientSchema>): List<FilterContent> {
-        return input.map { schema -> schemaConverter.convert(schema) }
+        return input
+            .map { schema -> schemaConverter.convert(schema) }
+            .sortedBy { content -> content.name }
     }
 }
