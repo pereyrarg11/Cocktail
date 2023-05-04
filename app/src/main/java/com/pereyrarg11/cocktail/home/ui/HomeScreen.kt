@@ -123,7 +123,7 @@ private fun navigateToIngredientDrinks(
         PISCO -> {
             Routes.IngredientDrinksScreen.createRoute(type.query, title)
         }
-        IngredientFilterType.MORE -> null
+        IngredientFilterType.MORE -> Routes.IngredientsScreen.route
         IngredientFilterType.UNKNOWN -> null
     }
 

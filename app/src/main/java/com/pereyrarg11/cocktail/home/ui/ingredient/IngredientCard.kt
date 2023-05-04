@@ -1,28 +1,19 @@
 package com.pereyrarg11.cocktail.home.ui.ingredient
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
-import com.bumptech.glide.integration.compose.GlideImage
 import com.pereyrarg11.cocktail.R
+import com.pereyrarg11.cocktail.common.ui.IngredientImage
 import com.pereyrarg11.cocktail.home.ui.model.IngredientDisplayable
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun IngredientCard(
     model: IngredientDisplayable,
@@ -34,41 +25,14 @@ fun IngredientCard(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        val strokeWidth = dimensionResource(id = R.dimen.width_ingredient_filter_stroke)
         val imageSize = dimensionResource(id = R.dimen.size_ingredient_filter_image)
 
-        if (isPreview) {
-            Image(
-                painter = painterResource(id = R.drawable.img_drink_demo),
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(imageSize)
-                    .clip(CircleShape)
-                    .border(
-                        BorderStroke(strokeWidth, MaterialTheme.colorScheme.primary),
-                        CircleShape
-                    )
-                    .padding(strokeWidth)
-                    .clickable { onClickListener() },
-            )
-
-        } else {
-            GlideImage(
-                model = model.imageUrl,
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(imageSize)
-                    .clip(CircleShape)
-                    .border(
-                        BorderStroke(strokeWidth, MaterialTheme.colorScheme.primary),
-                        CircleShape
-                    )
-                    .padding(strokeWidth)
-                    .clickable { onClickListener() },
-            )
-        }
+        IngredientImage(
+            modifier = Modifier.size(imageSize),
+            imageUrl = model.imageUrl,
+            isPreview = isPreview,
+            onClickListener = onClickListener,
+        )
 
         IngredientText(
             label = stringResource(id = model.labelResource),

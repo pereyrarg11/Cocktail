@@ -27,4 +27,6 @@ sealed class Routes(val route: String) {
         fun createRoute(query: String, title: String) = "ingredients/drinks?query=$query&title=$title"
 
     }
+
+    object IngredientsScreen: Routes("ingredients")
 }

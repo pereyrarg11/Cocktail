@@ -19,6 +19,7 @@ import com.pereyrarg11.cocktail.common.ui.navigation.Routes
 import com.pereyrarg11.cocktail.detail.ui.DrinkDetailScreen
 import com.pereyrarg11.cocktail.filteredDrinks.ui.FilteredDrinksScreen
 import com.pereyrarg11.cocktail.home.ui.HomeScreen
+import com.pereyrarg11.cocktail.ingredients.ui.IngredientsScreen
 import com.pereyrarg11.cocktail.ui.theme.CocktailTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -110,6 +111,8 @@ fun CocktailAppContent(
                     navHostController = navController
                 )
             }
+
+            composable(Routes.IngredientsScreen.route) { IngredientsScreen(navController) }
         }
     }
 }
